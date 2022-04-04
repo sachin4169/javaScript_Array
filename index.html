@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>JavaScrip Array</title>
+    <style>
+      .container {
+        margin: auto;
+        width: 40%;
+      }
+      .add {
+        margin: auto;
+      }
+      #table {
+        margin-top: 8%;
+      }
+      table {
+        width: 100%;
+      }
+      th{
+          text-align: left;
+      }
+      tr{
+          border-bottom: 1px solid gray ;
+      }
+      td {
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <label for="">Company:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" id="company" /><br /><br />
+      <label for="">Model:</label
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" id="model" /><br /><br />
+      <label for="">Memory (GB):</label
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" id="memory" /><br /><br />
+      <label for="">Price (RS):</label
+      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="number" id="price" /><br /><br />
+      <button class="add" onclick="add()">Add</button>
+      <div id="table">
+    
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
