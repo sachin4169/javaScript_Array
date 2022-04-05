@@ -33,23 +33,23 @@
   </head>
   <body>
     <div class="container">
-      <p id="error" style="color: brown;"></p>
+      <p id="error" style="color: brown"></p>
       <label for="">Company:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="company" required/><br /><br />
+      <input type="text" id="company" required /><br /><br />
       <label for="">Model:</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="model" required/><br /><br />
+      <input type="text" id="model" required /><br /><br />
       <label for="">Memory (GB):</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <input type="number" id="memory" required /><br /><br />
       <label for="">Price (RS):</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="number" id="price" required/><br /><br />
+      <input type="number" id="price" required /><br /><br />
       <button class="add" onclick="add()">Add</button>
       <br />
       <br />
 
-      <select name="" id="sort" >
+      <select name="" id="sort">
         <option value="">-Sort-</option>
         <option value="Asc">Ascending</option>
         <option value="Desc">Descending</option>
@@ -63,7 +63,7 @@
       </select>
 
       <button onclick="sorting()">Sort</button><br />
-      <br>
+      <br />
 
       <select name="" id="selectfield">
         <option value="">-Select Field-</option>
@@ -76,8 +76,18 @@
       <button onclick="search()">Search</button>
 
       <div id="table"></div>
-    </div>
+      
+      <select name="" id="product">
+        <option value="">-Select Field-</option>
+      </select>
 
+      <input type="number" id="quantity" />
+      <button onclick="addcart()">Add</button>
+      <button onclick="bill()">Generate Bill</button>
+      <div id="billtable">
+
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>

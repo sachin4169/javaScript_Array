@@ -20,6 +20,10 @@ function add(){
     };
     companyinfo.push(data);
     display();
+    var options = "<option>-Select Field-</option>"
+    companyinfo.forEach((element,index) => {
+        options += `<option value="${index}"> ${element.Name} ${element.Model}</option>` 
+    });document.getElementById("product").innerHTML = options;
     }
 };
   var table = `<table>
@@ -171,3 +175,49 @@ function sorting(){
     console.log(companyinfo);
     display();
 }
+var cart = [];
+var totalcost = 0;
+function addcart(){
+    var index = document.getElementById("product").value;
+    console.log(index);
+    var quantity = document.getElementById("quantity").value;
+    
+    var data = companyinfo[index];
+    console.log(data.Name);
+    var total = (Number(data.Rs))*quantity;
+    var data ={
+        "Discription" : `${data.Name} ${data.Model}`,
+        "Quantity" : `${quantity}` ,
+        "Rs": `${data.Rs}`,
+    };
+    totalcost +=total;
+    cart.push(data);
+    console.log(totalcost);
+    console.log(cart)
+    
+}
+console.log(totalcost);
+
+var billtable = `<table>
+<tr>
+    <th>Discription</th>
+    <th>Quantity</th>
+    <th>Price</th>
+</tr>`
+
+function bill(){
+    var row = ""
+    cart.forEach(element => {
+        row +=`  <tr>
+                <td>${element.Discription}</td>
+                <td>${element.Quantity}</td>
+                <td>${element.Rs}</td>
+            </tr>`
+    });        
+    document.getElementById("billtable").innerHTML=billtable+row+`<tr>
+    <td>Total</td>
+    <td></td>
+    <td>${totalcost}</td>
+    </tr></table>`;
+}
+
