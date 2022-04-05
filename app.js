@@ -7,6 +7,11 @@ function add(){
     var memory =document.getElementById("memory").value;
     var Rs =document.getElementById("price").value;
 
+    if(company ==""||model==""||memory==""||Rs==""){
+        document.getElementById("error").innerHTML="please fill all the fields";
+    }
+    else{
+        document.getElementById("error").innerHTML="";
     var data ={
         "Name" : `${company}`,
         "Model" : `${model}` ,
@@ -15,6 +20,7 @@ function add(){
     };
     companyinfo.push(data);
     display();
+    }
 };
   var table = `<table>
         <tr>

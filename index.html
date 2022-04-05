@@ -33,22 +33,23 @@
   </head>
   <body>
     <div class="container">
+      <p id="error" style="color: brown;"></p>
       <label for="">Company:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="company" /><br /><br />
+      <input type="text" id="company" required/><br /><br />
       <label for="">Model:</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="text" id="model" /><br /><br />
+      <input type="text" id="model" required/><br /><br />
       <label for="">Memory (GB):</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="number" id="memory" /><br /><br />
+      <input type="number" id="memory" required /><br /><br />
       <label for="">Price (RS):</label
       >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="number" id="price" /><br /><br />
+      <input type="number" id="price" required/><br /><br />
       <button class="add" onclick="add()">Add</button>
       <br />
       <br />
 
-      <select name="" id="sort">
+      <select name="" id="sort" >
         <option value="">-Sort-</option>
         <option value="Asc">Ascending</option>
         <option value="Desc">Descending</option>
