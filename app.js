@@ -67,7 +67,7 @@ function search() {
     var select = document.getElementById("selectfield").value;
     var item = document.getElementById("item").value;
     var row = "";
-    companyinfo.forEach(element => {
+    companyinfo.forEach((element,index) => {
         console.log(element["Name"])
          if (element[`${select}`] == item){
                 row +=`  <tr>
@@ -75,6 +75,8 @@ function search() {
                     <td>${element.Model}</td>
                     <td>${element.Memory}</td>
                     <td>${element.Rs}</td>
+                    <td>${element.Quantity}</td>
+                    <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
                 </tr>`
             }
             else{
@@ -291,6 +293,32 @@ function rating(){
     });        
     document.getElementById("rtable").innerHTML=ratingtable+row+"</table>";
    
+}
+
+function pricesorting(){
+    var min = document.getElementById("min").value;
+    var max = document.getElementById("max").value;
+
+    var row =""
+    companyinfo.forEach((element,index) => {
+        if(element.Rs >= min && element.Rs <= max){
+        console.log(element["Name"])
+        row +=`  <tr>
+            <td>${element.Name}</td>
+            <td>${element.Model}</td>
+            <td>${element.Memory}</td>
+            <td>${element.Rs}</td>
+            <td>${element.Quantity}</td>
+            <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
+        </tr>`
+        }
+        // else{
+        //     console.log("no product in range")   
+        //     display();
+        // }
+        
+    });
+    document.getElementById("table").innerHTML=table+row+tfooter;
 }
 //del function
 // var delbox = [];
