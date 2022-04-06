@@ -57,7 +57,7 @@ function display(){
                 <td>${element.Memory}</td>
                 <td>${element.Rs}</td>
                 <td>${element.Quantity}</td>
-                <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
+                <td><input type="checkbox" class="chk" name="color" value="${index}"></td>
             </tr>`
     });        
     document.getElementById("table").innerHTML=table+row+tfooter;
@@ -76,7 +76,7 @@ function search() {
                     <td>${element.Memory}</td>
                     <td>${element.Rs}</td>
                     <td>${element.Quantity}</td>
-                    <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
+                    <td><input type="checkbox" class="chk" name="color" value="${index}"></td>
                 </tr>`
             }
             else{
@@ -312,52 +312,26 @@ function pricesorting(){
             <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
         </tr>`
         }
-        // else{
-        //     console.log("no product in range")   
-        //     display();
-        // }
+        else{
+            console.log("no product in range")   
+            display();
+        }
         
     });
     document.getElementById("table").innerHTML=table+row+tfooter;
 }
-//del function
-// var delbox = [];
-// function del(){
-// let allCheckBox = document.querySelectorAll(".chk");
-//     console.log(allCheckBox)
-// allCheckBox.forEach((checkbox) => {
-//     checkbox.addEventListener("change", (event) => {
-//       if (event.target.checked) {
-//         console.log(event.target.value);
-//         delbox.push(event.target.value);
-//         console.log(delbox);
-//       } else {
-//         console.log("unchecked" + event.target.value);
-//         delbox.forEach((element,index) => {
-//             if(event.target.value == element){
-//                 console.log(element);
-//                 console.log(index);
-//                 delbox.splice(index, 1);
-//             };
-
-//         });
-        
-//         console.log(a);
-//       }
-//     });
-//   });
-    
-// }
-
-// var delbox = new Set();
-// function check(index){
-//     console.log(index)
-//     delbox.add(index)
-//     console.log(delbox);
-//     delbox.forEach ((value) =>{
-//         console.log(delbox)
-//         if(value == index){
-//             delbox.delete(index)
-//         }
-//     })
-// }
+function del()
+{
+        let checkboxes = document.querySelectorAll('input[name="color"]:checked');
+        console.log(checkboxes)
+        let values = [];
+        checkboxes.forEach((checkbox) => {
+            console.log(checkbox.value)
+            values.push(checkbox.value);
+        });
+        // alert(values);
+        values.forEach(element => {
+            companyinfo.splice(element,1)
+        });
+        display();
+}
