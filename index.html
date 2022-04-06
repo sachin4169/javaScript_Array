@@ -6,45 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>JavaScrip Array</title>
+
     <style>
       .container {
         margin: auto;
-        width: 40%;
+        width: 100%;
       }
       .add {
         margin: auto;
       }
       #table {
-        margin-top: 8%;
-      }
-      table {
+        margin: 4% 0;
         width: 100%;
       }
-      th {
+      th,
+      td {
         text-align: left;
+        padding: 4px;
+        width: 10%;
+        border-bottom: 1px solid gray;
       }
       tr {
         border-bottom: 1px solid gray;
-      }
-      td {
-        width: 30%;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <p id="error" style="color: brown"></p>
-      <label for="">Company:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label for="">Company:</label><br />
       <input type="text" id="company" required /><br /><br />
-      <label for="">Model:</label
-      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label for="">Model:</label><br />
       <input type="text" id="model" required /><br /><br />
-      <label for="">Memory (GB):</label
-      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label for="">Memory (GB):</label><br />
       <input type="number" id="memory" required /><br /><br />
-      <label for="">Price (RS):</label
-      >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <label for="">Price (RS):</label><br />
       <input type="number" id="price" required /><br /><br />
+      
+      <label for="">Quantity:</label><br />
+      <input type="number" id="quantity" required /><br /><br />
+
       <button class="add" onclick="add()">Add</button>
       <br />
       <br />
@@ -76,7 +80,7 @@
       <button onclick="search()">Search</button>
 
       <div id="table"></div>
-      
+
       <select name="" id="product">
         <option value="">-Select Field-</option>
       </select>
@@ -84,9 +88,7 @@
       <input type="number" id="quantity" />
       <button onclick="addcart()">Add</button>
       <button onclick="bill()">Generate Bill</button>
-      <div id="billtable">
-
-      </div>
+      <div id="billtable"></div>
     </div>
     <script src="app.js"></script>
   </body>
