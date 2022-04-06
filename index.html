@@ -85,7 +85,7 @@
       <select name="" id="product">
         <option value="">-Select Field-</option>
       </select>
-      <input type="number" id="quantity" />
+      <input type="number" id="productquantity" />
       <button onclick="addcart()">Add</button>
       <button onclick="bill()">Generate Bill</button>
       <div id="billtable"></div>
@@ -97,6 +97,24 @@
       <input type="number" id="newquantity" />
       <button onclick="update()">Update</button>
       <div id="billtable"></div>
+
+      <h3>Rating prouct</h3>
+      <select name="" id="rating_product">
+        <option value="">--Select Product--</option>
+      </select>
+      <select name="" id="rating">
+        <option value="">--Select Rating--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <button onclick="rating()">Rate</button><br />
+      <br />
+
+      <div id="rtable"></div>
 
     </div>
     <script src="app.js"></script>

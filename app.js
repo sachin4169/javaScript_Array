@@ -27,6 +27,7 @@ function add(){
         options += `<option value="${index}"> ${element.Name} ${element.Model}</option>` 
     });document.getElementById("product").innerHTML = options;
     document.getElementById("newproduct").innerHTML = options;
+    document.getElementById("rating_product").innerHTML = options;
     }
 };
   var table = `<table>
@@ -194,14 +195,15 @@ var totalcost = 0;
 function addcart(){
     var index = document.getElementById("product").value;
     console.log(index);
-    var quantity = document.getElementById("quantity").value;
+    var q = document.getElementById("productquantity").value;
+    console.log(q)
 
     var data = companyinfo[index];
     console.log(data.Name);
-    var total = (Number(data.Rs))*quantity;
+    var total = (Number(data.Rs))*q;
     var data ={
         "Discription" : `${data.Name} ${data.Model}`,
-        "Quantity" : `${quantity}` ,
+        "Quantity" : `${q}` ,
         "Rs": `${data.Rs}`,
     };
     totalcost +=total;
@@ -247,6 +249,48 @@ function update(){
     console.log("after"+data.Quantity);
     display()
 
+}
+
+var rateing = [];
+var ratingtable = `<table>
+<tr>
+    <th>Company</th>
+    <th>Model</th>
+    <th>Memory</th>
+    <th>Price</th>
+    <th>Rating</th>
+</tr>`
+
+function rating(){
+    var product = document.getElementById("rating_product").value;
+   console.log(product)
+    var rate = document.getElementById("rating").value;
+    console.log(rate);
+    
+    var rateing_product = companyinfo[product];
+    console.log(rateing_product)
+    var product = {
+        "Name" : `${rateing_product.Name}`,
+        "Model" : `${rateing_product.Model}` ,
+        "Memory": `${rateing_product.Memory}` ,
+        "Rs": `${rateing_product.Rs}`,
+        "Rating":`${rate}`,
+    };
+    console.log(typeof(rate));
+    rateing.push(product);
+
+    var row = ""
+    rateing.forEach((element) => {
+        row +=`  <tr>
+                <td>${element.Name}</td>
+                <td>${element.Model}</td>
+                <td>${element.Memory}</td>
+                <td>${element.Rs}</td>
+                <td>${element.Rating}</td>
+            </tr>`
+    });        
+    document.getElementById("rtable").innerHTML=ratingtable+row+"</table>";
+   
 }
 //del function
 // var delbox = [];
