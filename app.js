@@ -6,7 +6,6 @@ function add(){
     var memory =document.getElementById("memory").value;
     var Rs =document.getElementById("price").value;
     var quan = document.getElementById("quantity").value;
-    console.log(quan);
 
     if(company ==""||model==""||memory==""||Rs==""){
         document.getElementById("error").innerHTML="please fill all the fields";
@@ -91,11 +90,8 @@ function search() {
 function sorting(){
     console.log("sorting function")
     var sort = document.getElementById("sort").value;
-    console.log(sort);
     var sort_by = document.getElementById("sort_by").value;
-    console.log(sort_by);
-    // var x = companyinfo.sort((a, b) => b.Memory - a.Memory);
-    // console.log(x)
+  
     if(sort_by == "Name"){
         if(sort == "Asc"){
         companyinfo.sort((a, b) => {
@@ -189,16 +185,14 @@ function sorting(){
         console.log("please select sort-by");
     }
 
-    console.log(companyinfo);
+    // console.log(companyinfo);
     display();
 };
 var cart = [];
 var totalcost = 0;
 function addcart(){
     var index = document.getElementById("product").value;
-    console.log(index);
     var q = document.getElementById("productquantity").value;
-    console.log(q)
 
     var data = companyinfo[index];
     console.log(data.Name);
@@ -242,13 +236,11 @@ function bill(){
 
 function update(){
     var index = document.getElementById("newproduct").value;
-    console.log(index);
     var quantity = document.getElementById("newquantity").value;
-    console.log(quantity)
     var data = companyinfo[index];
-    console.log("befor"+data.Quantity);
+    // console.log("befor"+data.Quantity);
     data.Quantity = quantity;
-    console.log("after"+data.Quantity);
+    // console.log("after"+data.Quantity);
     display()
 
 }
@@ -265,9 +257,7 @@ var ratingtable = `<table>
 
 function rating(){
     var product = document.getElementById("rating_product").value;
-   console.log(product)
     var rate = document.getElementById("rating").value;
-    console.log(rate);
     
     var rateing_product = companyinfo[product];
     console.log(rateing_product)
@@ -278,7 +268,6 @@ function rating(){
         "Rs": `${rateing_product.Rs}`,
         "Rating":`${rate}`,
     };
-    console.log(typeof(rate));
     rateing.push(product);
 
     var row = ""
@@ -302,14 +291,13 @@ function pricesorting(){
     var row =""
     companyinfo.forEach((element,index) => {
         if(element.Rs >= min && element.Rs <= max){
-        console.log(element["Name"])
         row +=`  <tr>
             <td>${element.Name}</td>
             <td>${element.Model}</td>
             <td>${element.Memory}</td>
             <td>${element.Rs}</td>
             <td>${element.Quantity}</td>
-            <td><input type="checkbox" class="chk" value="" onchange="check(${index})"></td>
+            <td><input type="checkbox" class="chk" value="${index}""></td>
         </tr>`
         }
         else{
@@ -323,10 +311,8 @@ function pricesorting(){
 function del()
 {
         let checkboxes = document.querySelectorAll('input[name="color"]:checked');
-        console.log(checkboxes)
         let values = [];
         checkboxes.forEach((checkbox) => {
-            console.log(checkbox.value)
             values.push(checkbox.value);
         });
         // alert(values);
