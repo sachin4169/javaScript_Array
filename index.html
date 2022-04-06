@@ -45,7 +45,7 @@
 
       <label for="">Price (RS):</label><br />
       <input type="number" id="price" required /><br /><br />
-      
+
       <label for="">Quantity:</label><br />
       <input type="number" id="quantity" required /><br /><br />
 
@@ -81,14 +81,23 @@
 
       <div id="table"></div>
 
+      <h3>Add to cart</h3>
       <select name="" id="product">
         <option value="">-Select Field-</option>
       </select>
-
       <input type="number" id="quantity" />
       <button onclick="addcart()">Add</button>
       <button onclick="bill()">Generate Bill</button>
       <div id="billtable"></div>
+
+      <h3>Update prouct</h3>
+      <select name="" id="newproduct">
+        <option value="">-Select Field-</option>
+      </select>
+      <input type="number" id="newquantity" />
+      <button onclick="update()">Update</button>
+      <div id="billtable"></div>
+
     </div>
     <script src="app.js"></script>
   </body>

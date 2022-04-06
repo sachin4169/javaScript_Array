@@ -26,6 +26,7 @@ function add(){
     companyinfo.forEach((element,index) => {
         options += `<option value="${index}"> ${element.Name} ${element.Model}</option>` 
     });document.getElementById("product").innerHTML = options;
+    document.getElementById("newproduct").innerHTML = options;
     }
 };
   var table = `<table>
@@ -235,6 +236,18 @@ function bill(){
     </tr></table>`;
 };
 
+function update(){
+    var index = document.getElementById("newproduct").value;
+    console.log(index);
+    var quantity = document.getElementById("newquantity").value;
+    console.log(quantity)
+    var data = companyinfo[index];
+    console.log("befor"+data.Quantity);
+    data.Quantity = quantity;
+    console.log("after"+data.Quantity);
+    display()
+
+}
 //del function
 // var delbox = [];
 // function del(){
@@ -264,15 +277,15 @@ function bill(){
     
 // }
 
-var delbox = new Set();
-function check(index){
-    console.log(index)
-    delbox.add(index)
-    console.log(delbox);
-    delbox.forEach ((value) =>{
-        console.log(delbox)
-        if(value == index){
-            delbox.delete(index)
-        }
-    })
-}
+// var delbox = new Set();
+// function check(index){
+//     console.log(index)
+//     delbox.add(index)
+//     console.log(delbox);
+//     delbox.forEach ((value) =>{
+//         console.log(delbox)
+//         if(value == index){
+//             delbox.delete(index)
+//         }
+//     })
+// }
