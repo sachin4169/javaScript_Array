@@ -21,12 +21,7 @@ function add(){
     };
     companyinfo.push(data);
     display();
-    var options = "<option>-Select Field-</option>"
-    companyinfo.forEach((element,index) => {
-        options += `<option value="${index}"> ${element.Name} ${element.Model}</option>` 
-    });document.getElementById("product").innerHTML = options;
-    document.getElementById("newproduct").innerHTML = options;
-    document.getElementById("rating_product").innerHTML = options;
+    
     }
 };
   var table = `<table>
@@ -60,6 +55,12 @@ function display(){
             </tr>`
     });        
     document.getElementById("table").innerHTML=table+row+tfooter;
+    var options = "<option>-Select Field-</option>"
+    companyinfo.forEach((element,index) => {
+        options += `<option value="${index}"> ${element.Name} ${element.Model}</option>` 
+    });document.getElementById("product").innerHTML = options;
+    document.getElementById("newproduct").innerHTML = options;
+    document.getElementById("rating_product").innerHTML = options;
 };
 
 function search() {
@@ -238,7 +239,7 @@ function update(){
     var index = document.getElementById("newproduct").value;
     var quantity = document.getElementById("newquantity").value;
     var data = companyinfo[index];
-    // console.log("befor"+data.Quantity);
+    console.log("befor"+data.Quantity);
     data.Quantity = quantity;
     // console.log("after"+data.Quantity);
     display()
